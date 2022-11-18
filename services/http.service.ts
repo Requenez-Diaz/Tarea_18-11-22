@@ -43,13 +43,28 @@ export class HttpClient {
         try {
             const response = await fetch(`${baseUrl}/:id${endPoint}`, {
                 headers: {
-                    Autorizatio: `Bearer ${token}`
+                    Autorization: `Bearer ${token}`
                 }
             })
             const store: ListRecipesResponse = await response.json();
             return store;
         } catch (error: any) {
             console.log(error)
+        }
+    }
+    async patch(endPoint = "recipes") {
+        try {
+            const response = await fetch(`${baseUrl}/:id${endPoint}}`, {
+                headers: {
+                    Autorization: `Bearer ${token}`
+                }
+            })
+            const store: ListRecipesResponse = await response.json();
+            return store;
+        }
+        catch (error: any) {
+            console.log(error);
+
         }
     }
 }
